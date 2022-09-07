@@ -7,14 +7,16 @@ import models.AppInfoModel;
 import models.DeviceDetailsModel;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class AndroidHolderHolder extends MobileHolder {
+import java.time.Duration;
+
+public class AndroidDriverManager extends MobileManager {
 
     protected static ThreadLocal<AppiumDriver> threadLocalDriver = new ThreadLocal<>();
     private AppiumDriverLocalService server;
     private AppInfoModel appInfo;
     private DeviceDetailsModel deviceDetails;
 
-    public AndroidHolderHolder(AppiumDriverLocalService server, AppInfoModel appInfo, DeviceDetailsModel deviceDetails) {
+    public AndroidDriverManager(AppiumDriverLocalService server, AppInfoModel appInfo, DeviceDetailsModel deviceDetails) {
         this.server = server;
         this.appInfo = appInfo;
         this.deviceDetails = deviceDetails;
@@ -42,5 +44,10 @@ public class AndroidHolderHolder extends MobileHolder {
     @Override
     public void quitDriver() {
         threadLocalDriver.get().quit();
+    }
+
+    @Override
+    public void setTimeout() {
+        threadLocalDriver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
     }
 }

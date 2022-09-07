@@ -58,6 +58,7 @@ add to PATH:
 - 13:30 - 14:00 - Application manual testing
 - 14:00 - 15:10 - Set Up of Appium server automated start (had issues with deps and appium js)
 - 15:10 - 16:30 - Create appium session for device (had issues with virtual device set up so took real one)
+- 16:30 - 17:06 - Created base test with static methods to get app and device info
 
 # What to improve:
 - Find root cause of issue with starting session on virtual device, original error "de.payback.client.android" cannot be started
