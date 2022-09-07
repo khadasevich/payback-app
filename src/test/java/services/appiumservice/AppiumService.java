@@ -29,11 +29,7 @@ public class AppiumService {
         return server;
     }
 
-    public void stop() {
+    public void stopService() {
         this.server.stop();
-    }
-
-    public AppiumDriverLocalService get(){
-        return this.server;
     }
 }

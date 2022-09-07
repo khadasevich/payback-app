@@ -9,9 +9,9 @@ Binary: .apk
 
 # Environment:
 
-Device: virtual Pixel 5
+Device: Xiaomi Redmi Note 9
 
-Android Version: 12
+Android Version: 10
 
 Platform: Windows
 
@@ -57,7 +57,8 @@ add to PATH:
 - 12:30 - 13:30 - Set up environment and tools (VPN, Android Studio, Charles, Install Certificates (fruitless due to SSL pinning) Appium Server, Appium GUI, Appium Inspector, Add all needed environment variables)
 - 13:30 - 14:00 - Application manual testing
 - 14:00 - 15:10 - Set Up of Appium server automated start (had issues with deps and appium js)
-- 15:10 - - Create appium session
+- 15:10 - 16:30 - Create appium session for device (had issues with virtual device set up so took real one)
 
 # What to improve:
+- Find root cause of issue with starting session on virtual device, original error "de.payback.client.android" cannot be started
 
