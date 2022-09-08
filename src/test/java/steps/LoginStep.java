@@ -16,8 +16,11 @@ public class LoginStep {
 
     @Step("Make full login")
     public MainPage completeLogin(UserModel user) {
-        new WelcomePage(driver)
-                .openLoginPage();
-        return new MainPage(driver);
+        return new WelcomePage(driver)
+                .openLoginPage()
+                .inputKarteNumber(user.getCardNumber())
+                .clickWeiterButton()
+                .inputPasswort(user.getPassword())
+                .clickWeiterButton();
     }
 }
