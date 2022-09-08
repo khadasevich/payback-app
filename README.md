@@ -53,7 +53,14 @@ add to PATH:
 %ANDROID_SDK_ROOT%\tools\bin
 
 # How it works:
+1. Testing tool gets appium config from resources and starts appium server on localhost on any free port
+2. Details of device and app under testing parsed from jsons in resources and after app create driver session
+3. Main flow of test starts NOTE: credentials of user do not shared in Git for security reasons, it requires additional Credentials class with card number and user password
+4. After test finished app quits driver session and stops appium server
+5. App generates report
 
+# Link to found interesting things (issues??)
+[Issues](https://docs.google.com/document/d/1EpEOXUw3E9fok7wQhicyhxiPZvG34C1Jh6xJMuxFWfo/edit)
 
 # Timeline
 
@@ -67,11 +74,14 @@ add to PATH:
 - 17:06 - 18:10 - Added few pages and draft of test
 - 9/7/2022 12:15 - 13:52  - Continue work with pages and test
 - 13:52 - 14:26 - Adding logging and reporting
-- 14:26 - - Add retry analyzer and hide device and app to test data jsons
+- 14:26 - 15:04 - Add retry analyzer and hide device and app to test data jsons
+- 15:04 - 15:37 - Polishing code, finishing readme, filing found issues
 
 # What to improve:
 - Find root cause of issue with starting session on virtual device, original error "de.payback.client.android" cannot be started
 - Get access to test version of app with disabled security policies and finish login flow
+- Test code at all because without full access it's ony a draft of test
 - Add support of CI
 - Hide credentials to any DB
+- Add test listeners on fail (attach logs, screenshots??? to report)
 
