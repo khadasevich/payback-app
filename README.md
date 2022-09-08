@@ -53,12 +53,14 @@ add to PATH:
 # Timeline
 
 - 9/7/2022 12:00 + 3 GMT - Start
-- 12:00 - 12:30 - Add dependencies to project
-- 12:30 - 13:30 - Set up environment and tools (VPN, Android Studio, Charles, Install Certificates (fruitless due to SSL pinning) Appium Server, Appium GUI, Appium Inspector, Add all needed environment variables)
+- 12:00 - 12:15 - Add dependencies to project
+- 12:15 - 13:00 - Set up environment and tools (VPN, Android Studio, Charles, Install Certificates (fruitless due to SSL pinning) Appium Server, Appium GUI, Appium Inspector, Add all needed environment variables)
 - 13:30 - 14:00 - Application manual testing
 - 14:00 - 15:10 - Set Up of Appium server automated start (had issues with deps and appium js)
 - 15:10 - 16:30 - Create appium session for device (had issues with virtual device set up so took real one)
 - 16:30 - 17:06 - Created base test with static methods to get app and device info
+- 17:06 - 18:10 - Added few pages and draft of test
+- 9/7/2022 12:15 -  - Continue work with pages and test
 
 # What to improve:
 - Find root cause of issue with starting session on virtual device, original error "de.payback.client.android" cannot be started

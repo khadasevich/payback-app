@@ -5,14 +5,14 @@ import org.openqa.selenium.By;
 
 public class WelcomePage extends BasePage {
 
-    private By LOGIN_BUTTON = By.xpath("//*[@resource-id='de.payback.client.android:id/welcome_loginbutton']");
+    private By LOGIN_BUTTON = By.xpath("//*[contains(@resource-id, 'welcome_loginbutton')]");
 
     public WelcomePage(AppiumDriver driver) {
         super(driver);
     }
 
-    public LoginPage openLoginPage() {
+    public InputKartePage openLoginPage() {
         driver.findElement(LOGIN_BUTTON).click();
-        return new LoginPage(driver);
+        return new InputKartePage(driver);
     }
 }

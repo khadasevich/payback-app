@@ -12,10 +12,12 @@ public class LoginStep {
         this.driver = driver;
     }
 
-    public MainPage completeLogin(String karteNumber) {
+    public MainPage completeLogin(String karteNumber, String passwort) {
         return new WelcomePage(driver)
                 .openLoginPage()
                 .inputKarteNumber(karteNumber)
+                .clickWeiterButton()
+                .inputPasswort(passwort)
                 .clickWeiterButton();
     }
 }
