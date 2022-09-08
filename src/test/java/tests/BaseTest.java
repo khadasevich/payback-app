@@ -5,13 +5,15 @@ import drivermanager.AndroidDriverManager;
 import drivermanager.MobileManager;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
+import lombok.extern.log4j.Log4j;
 import lombok.extern.log4j.Log4j2;
 import models.AppInfoModel;
 import models.DeviceDetailsModel;
 import org.testng.annotations.*;
 import services.appiumservice.AppiumService;
+import tools.JsonTools;
 
-@Log4j2
+@Log4j
 public class BaseTest {
 
     private AppiumDriverLocalService server;
@@ -29,12 +31,15 @@ public class BaseTest {
     @BeforeClass
     public void getDriverSession() {
         log.info("Start mobile device session before test class execution");
-        AppInfoModel appInfo = GetApp.getAppInfo();
-        DeviceDetailsModel deviceDetails = GetDevice.getRealDevice();
+        AppInfoModel appInfo = JsonTools.getAppForTest();
+        DeviceDetailsModel deviceDetails = JsonTools.getDeviceForTest();
         if(deviceDetails.getPlatformName().equals(Device.ANDROID.getTitle())){
             mobileManager = new AndroidDriverManager(server, appInfo, deviceDetails);
         } else if (deviceDetails.getPlatformName().equals(Device.IOS.getTitle())) {
             //ToDo: add code for iOS set up
+        }
+        if(mobileManager == null) {
+            log.error("Mobile manager is null");
         }
         mobileManager.setUpDriver();
         mobileManager.setTimeout();

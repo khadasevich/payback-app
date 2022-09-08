@@ -31,6 +31,8 @@ Allure - 2.8.1 - reporting tool
 
 Lombok - 1.18.24 - tool to simplify work with POJO
 
+gson - 2.9.1 - tool to work with Json objects
+
 # Environment Setup: Windows
 The list of required tools:
 - Java JDK (1.8); setup JAVA_HOME environment variable
@@ -50,6 +52,9 @@ add to PATH:
 %ANDROID_SDK_ROOT%\emulator
 %ANDROID_SDK_ROOT%\tools\bin
 
+# How it works:
+
+
 # Timeline
 
 - 9/7/2022 12:00 + 3 GMT - Start
@@ -61,8 +66,12 @@ add to PATH:
 - 16:30 - 17:06 - Created base test with static methods to get app and device info
 - 17:06 - 18:10 - Added few pages and draft of test
 - 9/7/2022 12:15 - 13:52  - Continue work with pages and test
-- 13:52 - - Adding logging and reporting
+- 13:52 - 14:26 - Adding logging and reporting
+- 14:26 - - Add retry analyzer and hide device and app to test data jsons
 
 # What to improve:
 - Find root cause of issue with starting session on virtual device, original error "de.payback.client.android" cannot be started
+- Get access to test version of app with disabled security policies and finish login flow
+- Add support of CI
+- Hide credentials to any DB
 

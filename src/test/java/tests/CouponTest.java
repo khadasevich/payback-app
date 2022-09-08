@@ -4,14 +4,15 @@ import constants.Credentials;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.log4j.Log4j;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import steps.LoginStep;
+import tools.RetryAnalyzer;
 
-@Log4j2
+@Log4j
 public class CouponTest extends BaseTest{
 
     private MainPage mainPage;
@@ -23,7 +24,7 @@ public class CouponTest extends BaseTest{
         mainPage = loginStep.completeLogin(Credentials.getCredentials());
     }
 
-    @Test()
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Severity(SeverityLevel.CRITICAL)
     @Description("User freshly logs into system and goes to coupons selects REWE partner and activates first coupon")
     public void activateReweCouponTest() {

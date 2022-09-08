@@ -3,20 +3,20 @@ package services.appiumservice;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
-import lombok.extern.log4j.Log4j2;
-import tools.ConfigurationManager;
+import lombok.extern.log4j.Log4j;
+import tools.AppiumConfigManager;
 
 import java.io.File;
 
-@Log4j2
+@Log4j
 public class AppiumService {
 
     private AppiumDriverLocalService server;
-    private ConfigurationManager configManager;
+    private AppiumConfigManager configManager;
     private AppiumServiceBuilder serviceBuilder;
 
     public AppiumService() {
-        this.configManager = new ConfigurationManager();
+        this.configManager = new AppiumConfigManager();
         this.serviceBuilder = new AppiumServiceBuilder();
     }
 

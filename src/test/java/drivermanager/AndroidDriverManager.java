@@ -4,14 +4,12 @@ import constants.Timeouts;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.log4j.Log4j;
 import models.AppInfoModel;
 import models.DeviceDetailsModel;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import java.time.Duration;
-
-@Log4j2
+@Log4j
 public class AndroidDriverManager extends MobileManager {
 
     protected static ThreadLocal<AppiumDriver> threadLocalDriver = new ThreadLocal<>();

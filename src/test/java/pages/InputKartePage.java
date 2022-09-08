@@ -2,10 +2,10 @@ package pages;
 
 import io.appium.java_client.AppiumDriver;
 import io.qameta.allure.Step;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.By;
 
-@Log4j2
+@Log4j
 public class InputKartePage extends BasePage {
 
     private By KARTE_INPUT = By.xpath("");
@@ -20,14 +20,14 @@ public class InputKartePage extends BasePage {
 
     @Step("Input card number")
     public InputKartePage inputKarteNumber(String karte) {
-        log.debug(String.format("Attempt to send text to element by locator: "), KARTE_INPUT.toString());
+        log.debug(String.format("Attempt to send text to element by locator: %s", KARTE_INPUT.toString()));
         driver.findElement(KARTE_INPUT).sendKeys(karte);
         return this;
     }
 
     @Step("Proceed with password")
     public InputPasswortPage clickWeiterButton() {
-        log.debug(String.format("Attempt to click element by locator: "), WEITER_BUTTON.toString());
+        log.debug(String.format("Attempt to click element by locator: %s", WEITER_BUTTON.toString()));
         driver.findElement(WEITER_BUTTON).click();
         return new InputPasswortPage(driver);
     }
