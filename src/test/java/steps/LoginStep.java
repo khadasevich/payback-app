@@ -1,6 +1,7 @@
 package steps;
 
 import io.appium.java_client.AppiumDriver;
+import models.UserModel;
 import pages.MainPage;
 import pages.WelcomePage;
 
@@ -12,12 +13,12 @@ public class LoginStep {
         this.driver = driver;
     }
 
-    public MainPage completeLogin(String karteNumber, String passwort) {
+    public MainPage completeLogin(UserModel user) {
         return new WelcomePage(driver)
                 .openLoginPage()
-                .inputKarteNumber(karteNumber)
+                .inputKarteNumber(user.getCardNumber())
                 .clickWeiterButton()
-                .inputPasswort(passwort)
+                .inputPasswort(user.getPassword())
                 .clickWeiterButton();
     }
 }

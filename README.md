@@ -60,7 +60,8 @@ add to PATH:
 - 15:10 - 16:30 - Create appium session for device (had issues with virtual device set up so took real one)
 - 16:30 - 17:06 - Created base test with static methods to get app and device info
 - 17:06 - 18:10 - Added few pages and draft of test
-- 9/7/2022 12:15 -  - Continue work with pages and test
+- 9/7/2022 12:15 - 13:52  - Continue work with pages and test
+- 13:52 - - Adding logging and reporting
 
 # What to improve:
 - Find root cause of issue with starting session on virtual device, original error "de.payback.client.android" cannot be started
